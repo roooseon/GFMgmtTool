@@ -1,3 +1,4 @@
+package com.gfmgmttool.views;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -14,7 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 
-public class mainWindow {
+public class views {
 
 	private JFrame frame;
 	private JTextField txtUsername;
@@ -29,7 +30,7 @@ public class mainWindow {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					mainWindow window = new mainWindow();
+					views window = new views();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +42,7 @@ public class mainWindow {
 	/**
 	 * Create the application.
 	 */
-	public mainWindow() {
+	public views() {
 		initialize();
 	}
 
