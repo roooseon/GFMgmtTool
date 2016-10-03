@@ -1,0 +1,19 @@
+{	
+	"name" : "Girlfriend",
+	"model": [
+		{
+			"name": "id",
+			"type": "int",
+			"key": "primary key",
+			"index": false
+		},{
+			"name": "name",
+			"type": "text",
+			"index": false
+		},{
+			"name": "priority",
+			"type": "boolean",
+			"index": false
+		}
+	]
+}
