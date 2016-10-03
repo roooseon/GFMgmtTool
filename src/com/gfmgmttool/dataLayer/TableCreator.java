@@ -25,6 +25,7 @@ public class TableCreator {
 		Consumer<String> sqlCreator = new Consumer<String>() {
 			@Override
 			public void accept(String s) {
+				Statement stmt = null;
 				try {
 					FileReader givenJSON = new FileReader(s);
 					JSONParser parser = new JSONParser();
@@ -40,10 +41,15 @@ public class TableCreator {
 							sql.append(entry.get("index") + " ");
 						if(entry.get("key") != null)
 							sql.append(entry.get("key") + " ");
+						if(array.indexOf(a) != array.size() -1)
+							sql.append(", ");
 					}
 					sql.append(")");
 					// TODO: run sql query to create tables. Check if db exists
 					System.out.println(sql);
+					stmt = c.createStatement();
+					stmt.executeQuery(sql.toString());
+					stmt.close();
 				} catch (Exception e) {
 					System.exit(0);
 				}
